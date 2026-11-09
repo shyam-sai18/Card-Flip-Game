@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memory Card  flip Game</title>
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Memory Game</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <h1>Memory Flip Card Game</h1>
-  <div class="game-board" id="game-board"></div>
-<a href="india.html"><button>PLAY AGAIN</button></a>
+
+  <main class="game-container">
+
+    <header class="game-header">
+      <p class="game-label">✦ BRAIN CHALLENGE ✦</p>
+      <h1>Memory <span>Master</span></h1>
+      <p class="subtitle">Test your memory. Match all 8 pairs!</p>
+    </header>
+
+    <section class="game-info">
+      <div class="info-card">
+        <span>🎯</span>
+        <p>Moves</p>
+        <h2 id="moves">0</h2>
+      </div>
+
+      <div class="info-card">
+        <span>🏆</span>
+        <p>Matched</p>
+        <h2 id="matched">0 / 8</h2>
+      </div>
+
+      <div class="info-card">
+        <span>⏱️</span>
+        <p>Time</p>
+        <h2 id="timer">00:00</h2>
+      </div>
+    </section>
+
+    <div class="game-board" id="game-board"></div>
+<div id="win-message" class="win-message">
+  <h2>🎉 Congratulations!</h2>
+  <p>You matched all 8 pairs!</p>
+  <p id="final-stats"></p>
+  <button onclick="createGame()" class="restart-btn">
+    Play Again ↻
+  </button>
+</div>
+    <button id="restart-btn" class="restart-btn">
+      ↻ Restart Game
+    </button>
+
+    <p class="footer-text">Made with ❤️ using HTML, CSS & JavaScript</p>
+
+  </main>
+
   <script src="index.js"></script>
 </body>
 </html>
