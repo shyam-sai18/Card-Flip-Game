@@ -6,7 +6,16 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #080d1c, #111b35, #080d1c);
+  background:
+    linear-gradient(
+      rgba(5, 10, 25, 0.88),
+      rgba(5, 10, 25, 0.92)
+    ),
+    url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -14,6 +23,7 @@ body {
   align-items: center;
   padding: 30px 15px;
 }
+
 
 .game-container {
   width: 100%;
@@ -26,7 +36,7 @@ body {
 }
 
 .game-label {
-  color: #38bdf8;
+  color: #ff9933;
   font-size: 12px;
   letter-spacing: 4px;
   font-weight: bold;
@@ -40,9 +50,16 @@ h1 {
 }
 
 h1 span {
-  color: #38bdf8;
-}
+  background: linear-gradient(
+    90deg,
+    #ff9933,
+    #ffffff,
+    #138808
+  );
 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .subtitle {
   color: #94a3b8;
   font-size: 15px;
@@ -136,22 +153,106 @@ h1 span {
   margin-top: 25px;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 32px;
+/* Tablet screens */
+@media (max-width: 768px) {
+  body {
+    padding: 25px 15px;
+    align-items: flex-start;
+  }
+
+  .game-container {
+    max-width: 500px;
   }
 
   .game-board {
+    gap: 10px;
+    max-width: 420px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .game-info {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .info-card {
+    padding: 10px 5px;
+    border-radius: 10px;
+  }
+
+  .info-card span {
+    font-size: 19px;
+  }
+
+  .info-card p {
+    font-size: 11px;
+  }
+
+  .info-card h2 {
+    font-size: 17px;
+  }
+
+  .game-board {
+    width: 100%;
+    max-width: 380px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
   }
 
   .card {
-    font-size: 27px;
-    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: 25px;
+    border-radius: 9px;
+    min-width: 0;
   }
 
-  .info-card {
-    padding: 12px 5px;
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .restart-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .win-message {
+    padding: 22px 12px;
+  }
+
+  .win-message h2 {
+    font-size: 23px;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 350px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .game-board {
+    gap: 6px;
+  }
+
+  .card {
+    font-size: 20px;
   }
 }
 .win-message {
